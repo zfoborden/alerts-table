@@ -1,8 +1,8 @@
 import angular from 'angular';
-import { Alerts } from './alerts';
 
 angular.module('app', []);
 
+// Table component
 function TableController($scope, $element, $attrs, AlertsService) {
 	var ctrl = this;
 
@@ -33,7 +33,6 @@ function TableController($scope, $element, $attrs, AlertsService) {
 			console.log(err);
 		});
 }
-
 angular.module('app').component('alertTable', {
   template: `
 	  <div class="container-fluid">
@@ -58,6 +57,7 @@ angular.module('app').component('alertTable', {
   controller: TableController
 });
 
+// TableRow component
 function TableRowController() {
 	var ctrl = this;
 
@@ -67,7 +67,6 @@ function TableRowController() {
 		ctrl.alert = this.alert;
 	};
 }
-
 angular.module('app').component('tableRow', {
 	template: `
 		<div class="card-header" role="tab" id="headingOne">
@@ -94,6 +93,7 @@ angular.module('app').component('tableRow', {
 	controller: TableRowController
 });
 
+// TableCell component
 function CellController() {
 	var ctrl = this;
 
@@ -101,7 +101,6 @@ function CellController() {
 		ctrl.alert = this.alert;
 	};
 }
-
 angular.module('app').component('alertCell', {
 	template: `
 		<div class="card-block">
